@@ -1,10 +1,27 @@
-<app-recipe-item class="recipe-item1">recipe-item-1</app-recipe-item>
-<app-recipe-item class="recipe-item2">recipe-item-2</app-recipe-item>
-<app-recipe-item class="recipe-item3">recipe-item-3</app-recipe-item>
-<app-recipe-item class="recipe-item4">recipe-item-4</app-recipe-item>
-<app-recipe-item class="recipe-item5">recipe-item-5</app-recipe-item>
-<app-recipe-item class="recipe-item6">recipe-item-6</app-recipe-item>
-<app-recipe-item class="recipe-item7">recipe-item-7</app-recipe-item>
-<app-recipe-item class="recipe-item8">recipe-item-8</app-recipe-item>
-<app-recipe-item class="recipe-item9">recipe-item-9</app-recipe-item>
-<app-recipe-item class="recipe-item10">recipe-item-10</app-recipe-item>
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-success">New Recipe</button>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+    <a
+      href=""
+      class="list-group-item clearfix"
+      *ngFor="let recipe of recipes" >
+      <div class="pull-left">
+        <h4 class="list-group-item-heading">{{ recipe.name }}</h4>
+        <p class="list-group-item-text">{{ recipe.description }}</p>
+      </div>
+      <span class="pull-right">
+        <img
+          [src]="recipe.imagePath"
+          alt="{{ recipe.name }}"
+          class="img-responsive"
+          style="max-height: 50px;">
+      </span>
+    </a>
+    <app-recipe-item></app-recipe-item>
+  </div>
+</div>
